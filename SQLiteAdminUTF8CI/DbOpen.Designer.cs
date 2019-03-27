@@ -40,7 +40,7 @@
             // 
             // Txt_Password
             // 
-            this.Txt_Password.Location = new System.Drawing.Point(107, 247);
+            this.Txt_Password.Location = new System.Drawing.Point(176, 241);
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.PasswordChar = '*';
             this.Txt_Password.Size = new System.Drawing.Size(192, 20);
@@ -50,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 250);
+            this.label2.Location = new System.Drawing.Point(117, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
@@ -60,7 +60,7 @@
             // 
             this.btn_dbac.Image = ((System.Drawing.Image)(resources.GetObject("btn_dbac.Image")));
             this.btn_dbac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dbac.Location = new System.Drawing.Point(499, 243);
+            this.btn_dbac.Location = new System.Drawing.Point(492, 241);
             this.btn_dbac.Name = "btn_dbac";
             this.btn_dbac.Size = new System.Drawing.Size(68, 26);
             this.btn_dbac.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 285);
+            this.ClientSize = new System.Drawing.Size(572, 272);
             this.Controls.Add(this.Lv_Drives);
             this.Controls.Add(this.Lv_Folders);
             this.Controls.Add(this.btn_dbac);
