@@ -32,15 +32,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_TableName = new System.Windows.Forms.TextBox();
             this.Dg_FieldList = new System.Windows.Forms.DataGridView();
-            this.fldname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fldtype = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fldisdefault = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fldisnotnull = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fldisprimary = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fldcollation = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btn_tabloolustur = new System.Windows.Forms.Button();
+            this.FldName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FldType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.FldDefaultValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FldIsNotNull = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.FldIsPrimary = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.FldCollation = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.FldIsUnique = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.FldIsUpdated = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btn_tabloolustur = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dg_FieldList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,12 +66,12 @@
             this.Dg_FieldList.AllowUserToResizeRows = false;
             this.Dg_FieldList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dg_FieldList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fldname,
-            this.fldtype,
-            this.fldisdefault,
-            this.fldisnotnull,
-            this.fldisprimary,
-            this.fldcollation,
+            this.FldName,
+            this.FldType,
+            this.FldDefaultValue,
+            this.FldIsNotNull,
+            this.FldIsPrimary,
+            this.FldCollation,
             this.FldIsUnique,
             this.FldIsUpdated});
             this.Dg_FieldList.Location = new System.Drawing.Point(12, 44);
@@ -85,70 +85,83 @@
             this.Dg_FieldList.NewRowNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.Dg_FieldList_NewRowNeeded);
             this.Dg_FieldList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Dg_FieldList_KeyUp);
             // 
-            // fldname
+            // btn_tabloolustur
             // 
-            this.fldname.DataPropertyName = "FldName";
-            this.fldname.HeaderText = "Name";
-            this.fldname.Name = "fldname";
-            this.fldname.Width = 200;
+            this.btn_tabloolustur.Image = ((System.Drawing.Image)(resources.GetObject("btn_tabloolustur.Image")));
+            this.btn_tabloolustur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_tabloolustur.Location = new System.Drawing.Point(659, 12);
+            this.btn_tabloolustur.Name = "btn_tabloolustur";
+            this.btn_tabloolustur.Size = new System.Drawing.Size(75, 26);
+            this.btn_tabloolustur.TabIndex = 5;
+            this.btn_tabloolustur.Text = "Create";
+            this.btn_tabloolustur.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_tabloolustur.UseVisualStyleBackColor = true;
+            this.btn_tabloolustur.Click += new System.EventHandler(this.btn_tabloolustur_Click);
             // 
-            // fldtype
+            // FldName
             // 
-            this.fldtype.DataPropertyName = "FldType";
-            this.fldtype.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.fldtype.HeaderText = "Type";
-            this.fldtype.Items.AddRange(new object[] {
+            this.FldName.DataPropertyName = "FldName";
+            this.FldName.HeaderText = "Name";
+            this.FldName.Name = "FldName";
+            this.FldName.Width = 200;
+            // 
+            // FldType
+            // 
+            this.FldType.DataPropertyName = "FldType";
+            this.FldType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.FldType.HeaderText = "Type";
+            this.FldType.Items.AddRange(new object[] {
             "TEXT",
             "NUMERIC",
             "INTEGER",
             "REAL",
             "BLOB"});
-            this.fldtype.Name = "fldtype";
-            this.fldtype.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.fldtype.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.FldType.Name = "FldType";
+            this.FldType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FldType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // fldisdefault
+            // FldDefaultValue
             // 
-            this.fldisdefault.DataPropertyName = "FldDefaultValue";
-            this.fldisdefault.HeaderText = "Default";
-            this.fldisdefault.Name = "fldisdefault";
+            this.FldDefaultValue.DataPropertyName = "FldDefaultValue";
+            this.FldDefaultValue.HeaderText = "Default";
+            this.FldDefaultValue.Name = "FldDefaultValue";
             // 
-            // fldisnotnull
+            // FldIsNotNull
             // 
-            this.fldisnotnull.DataPropertyName = "FldIsNotNull";
-            this.fldisnotnull.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.fldisnotnull.HeaderText = "Not Null";
-            this.fldisnotnull.Items.AddRange(new object[] {
+            this.FldIsNotNull.DataPropertyName = "FldIsNotNull";
+            this.FldIsNotNull.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.FldIsNotNull.HeaderText = "Not Null";
+            this.FldIsNotNull.Items.AddRange(new object[] {
             "NOT NULL",
             "ALLOW NULL"});
-            this.fldisnotnull.Name = "fldisnotnull";
-            this.fldisnotnull.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FldIsNotNull.Name = "FldIsNotNull";
+            this.FldIsNotNull.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // fldisprimary
+            // FldIsPrimary
             // 
-            this.fldisprimary.DataPropertyName = "FldIsPrimary";
-            this.fldisprimary.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.fldisprimary.HeaderText = "Primary";
-            this.fldisprimary.Items.AddRange(new object[] {
+            this.FldIsPrimary.DataPropertyName = "FldIsPrimary";
+            this.FldIsPrimary.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.FldIsPrimary.HeaderText = "Primary";
+            this.FldIsPrimary.Items.AddRange(new object[] {
             "YES",
             "NO"});
-            this.fldisprimary.Name = "fldisprimary";
-            this.fldisprimary.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.fldisprimary.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.fldisprimary.Width = 60;
+            this.FldIsPrimary.Name = "FldIsPrimary";
+            this.FldIsPrimary.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FldIsPrimary.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.FldIsPrimary.Width = 60;
             // 
-            // fldcollation
+            // FldCollation
             // 
-            this.fldcollation.DataPropertyName = "FldCollation";
-            this.fldcollation.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.fldcollation.HeaderText = "Collation";
-            this.fldcollation.Items.AddRange(new object[] {
+            this.FldCollation.DataPropertyName = "FldCollation";
+            this.FldCollation.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.FldCollation.HeaderText = "Collation";
+            this.FldCollation.Items.AddRange(new object[] {
             "NONE",
             "UTF8CI"});
-            this.fldcollation.Name = "fldcollation";
-            this.fldcollation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.fldcollation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.fldcollation.Width = 70;
+            this.FldCollation.Name = "FldCollation";
+            this.FldCollation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FldCollation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.FldCollation.Width = 70;
             // 
             // FldIsUnique
             // 
@@ -169,19 +182,6 @@
             this.FldIsUpdated.HeaderText = "fldupdated";
             this.FldIsUpdated.Name = "FldIsUpdated";
             this.FldIsUpdated.Visible = false;
-            // 
-            // btn_tabloolustur
-            // 
-            this.btn_tabloolustur.Image = ((System.Drawing.Image)(resources.GetObject("btn_tabloolustur.Image")));
-            this.btn_tabloolustur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_tabloolustur.Location = new System.Drawing.Point(659, 12);
-            this.btn_tabloolustur.Name = "btn_tabloolustur";
-            this.btn_tabloolustur.Size = new System.Drawing.Size(75, 26);
-            this.btn_tabloolustur.TabIndex = 5;
-            this.btn_tabloolustur.Text = "Create";
-            this.btn_tabloolustur.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_tabloolustur.UseVisualStyleBackColor = true;
-            this.btn_tabloolustur.Click += new System.EventHandler(this.btn_tabloolustur_Click);
             // 
             // TableNew
             // 
@@ -211,12 +211,12 @@
         private System.Windows.Forms.TextBox Txt_TableName;
         public System.Windows.Forms.DataGridView Dg_FieldList;
         private System.Windows.Forms.Button btn_tabloolustur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fldname;
-        private System.Windows.Forms.DataGridViewComboBoxColumn fldtype;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fldisdefault;
-        private System.Windows.Forms.DataGridViewComboBoxColumn fldisnotnull;
-        private System.Windows.Forms.DataGridViewComboBoxColumn fldisprimary;
-        private System.Windows.Forms.DataGridViewComboBoxColumn fldcollation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FldName;
+        private System.Windows.Forms.DataGridViewComboBoxColumn FldType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FldDefaultValue;
+        private System.Windows.Forms.DataGridViewComboBoxColumn FldIsNotNull;
+        private System.Windows.Forms.DataGridViewComboBoxColumn FldIsPrimary;
+        private System.Windows.Forms.DataGridViewComboBoxColumn FldCollation;
         private System.Windows.Forms.DataGridViewComboBoxColumn FldIsUnique;
         private System.Windows.Forms.DataGridViewCheckBoxColumn FldIsUpdated;
     }

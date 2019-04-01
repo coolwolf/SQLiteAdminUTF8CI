@@ -228,7 +228,7 @@ namespace SQLiteAdminUTF8CI
         private void Dg_FieldList_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            Dg_FieldList["fldupdated", e.RowIndex].Value=true;
+            Dg_FieldList["FldIsUpdated", e.RowIndex].Value=true;
         }
     }
 }
