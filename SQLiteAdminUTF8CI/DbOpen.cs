@@ -17,7 +17,7 @@ namespace SQLiteAdminUTF8CI
         {
             InitializeComponent();
         }
-        private void btn_dbac_Click(object sender, EventArgs e)
+        private void Btn_OpenDb_Click(object sender, EventArgs e)
         {
             OpenSelectedDb();
         }
@@ -43,7 +43,7 @@ namespace SQLiteAdminUTF8CI
                 }
             }
         }
-        private void lv_dizinler_DoubleClick(object sender, EventArgs e)
+        private void Lv_Folders_DoubleClick(object sender, EventArgs e)
         {
             if (Lv_Folders.SelectedItems[0].Focused == true)
             {
@@ -59,6 +59,7 @@ namespace SQLiteAdminUTF8CI
         }
         private void ListFiles(string ParentFolder)
         {
+            Txt_FolderPath.Text = ParentFolder;
             string _repl = "";
             Lv_Folders.Items.Clear();
             if (ParentFolder.IndexOf("\\") > 0)
@@ -80,7 +81,7 @@ namespace SQLiteAdminUTF8CI
                 Lv_Folders.Items.Add(_file, fi.Name, 2);
             }
         }
-        private void lv_suruculer_SelectedIndexChanged(object sender, EventArgs e)
+        private void Lv_Drives_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Lv_Drives.SelectedItems.Count > 0 && Lv_Drives.SelectedItems[0].Focused == true)
                 ListFiles(Lv_Drives.SelectedItems[0].Name);
@@ -108,9 +109,24 @@ namespace SQLiteAdminUTF8CI
             }
             this.Close();
         }
-        private void txt_parola_KeyUp(object sender, KeyEventArgs e)
+        private void Txt_Password_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) OpenSelectedDb();
+        }
+        private void Txt_FolderPath_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try 
+                {
+                    ListFiles(Txt_FolderPath.Text);
+                    Properties.Settings.Default.LastFolder = Txt_FolderPath.Text;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

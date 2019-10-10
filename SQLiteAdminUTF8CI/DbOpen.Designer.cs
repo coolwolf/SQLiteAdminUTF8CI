@@ -32,54 +32,57 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DbOpen));
             this.Txt_Password = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_dbac = new System.Windows.Forms.Button();
+            this.Btn_OpenDb = new System.Windows.Forms.Button();
             this.Lv_Drives = new System.Windows.Forms.ListView();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Lv_Folders = new System.Windows.Forms.ListView();
+            this.Txt_FolderPath = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Txt_Password
             // 
-            this.Txt_Password.Location = new System.Drawing.Point(176, 241);
+            this.Txt_Password.Location = new System.Drawing.Point(177, 277);
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.PasswordChar = '*';
             this.Txt_Password.Size = new System.Drawing.Size(192, 20);
             this.Txt_Password.TabIndex = 4;
-            this.Txt_Password.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_parola_KeyUp);
+            this.Txt_Password.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_Password_KeyUp);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(117, 244);
+            this.label2.Location = new System.Drawing.Point(118, 280);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
-            // btn_dbac
+            // Btn_OpenDb
             // 
-            this.btn_dbac.Image = ((System.Drawing.Image)(resources.GetObject("btn_dbac.Image")));
-            this.btn_dbac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dbac.Location = new System.Drawing.Point(492, 241);
-            this.btn_dbac.Name = "btn_dbac";
-            this.btn_dbac.Size = new System.Drawing.Size(68, 26);
-            this.btn_dbac.TabIndex = 5;
-            this.btn_dbac.Text = "&Open";
-            this.btn_dbac.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_dbac.UseVisualStyleBackColor = true;
-            this.btn_dbac.Click += new System.EventHandler(this.btn_dbac_Click);
+            this.Btn_OpenDb.Image = ((System.Drawing.Image)(resources.GetObject("Btn_OpenDb.Image")));
+            this.Btn_OpenDb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_OpenDb.Location = new System.Drawing.Point(493, 277);
+            this.Btn_OpenDb.Name = "Btn_OpenDb";
+            this.Btn_OpenDb.Size = new System.Drawing.Size(68, 26);
+            this.Btn_OpenDb.TabIndex = 5;
+            this.Btn_OpenDb.Text = "&Open";
+            this.Btn_OpenDb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_OpenDb.UseVisualStyleBackColor = true;
+            this.Btn_OpenDb.Click += new System.EventHandler(this.Btn_OpenDb_Click);
             // 
             // Lv_Drives
             // 
             this.Lv_Drives.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Lv_Drives.HideSelection = false;
             this.Lv_Drives.LargeImageList = this.ımageList1;
-            this.Lv_Drives.Location = new System.Drawing.Point(0, 0);
+            this.Lv_Drives.Location = new System.Drawing.Point(1, 36);
             this.Lv_Drives.Name = "Lv_Drives";
             this.Lv_Drives.Size = new System.Drawing.Size(105, 235);
             this.Lv_Drives.SmallImageList = this.ımageList1;
             this.Lv_Drives.TabIndex = 9;
             this.Lv_Drives.UseCompatibleStateImageBehavior = false;
-            this.Lv_Drives.SelectedIndexChanged += new System.EventHandler(this.lv_suruculer_SelectedIndexChanged);
+            this.Lv_Drives.SelectedIndexChanged += new System.EventHandler(this.Lv_Drives_SelectedIndexChanged);
             // 
             // ımageList1
             // 
@@ -91,24 +94,44 @@
             // 
             // Lv_Folders
             // 
+            this.Lv_Folders.HideSelection = false;
             this.Lv_Folders.LargeImageList = this.ımageList1;
-            this.Lv_Folders.Location = new System.Drawing.Point(107, 0);
+            this.Lv_Folders.Location = new System.Drawing.Point(108, 36);
             this.Lv_Folders.MultiSelect = false;
             this.Lv_Folders.Name = "Lv_Folders";
             this.Lv_Folders.Size = new System.Drawing.Size(460, 235);
             this.Lv_Folders.SmallImageList = this.ımageList1;
             this.Lv_Folders.TabIndex = 8;
             this.Lv_Folders.UseCompatibleStateImageBehavior = false;
-            this.Lv_Folders.DoubleClick += new System.EventHandler(this.lv_dizinler_DoubleClick);
+            this.Lv_Folders.DoubleClick += new System.EventHandler(this.Lv_Folders_DoubleClick);
+            // 
+            // Txt_FolderPath
+            // 
+            this.Txt_FolderPath.Location = new System.Drawing.Point(108, 12);
+            this.Txt_FolderPath.Name = "Txt_FolderPath";
+            this.Txt_FolderPath.Size = new System.Drawing.Size(460, 20);
+            this.Txt_FolderPath.TabIndex = 10;
+            this.Txt_FolderPath.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_FolderPath_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(73, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Path";
             // 
             // DbOpen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 272);
+            this.ClientSize = new System.Drawing.Size(580, 310);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Txt_FolderPath);
             this.Controls.Add(this.Lv_Drives);
             this.Controls.Add(this.Lv_Folders);
-            this.Controls.Add(this.btn_dbac);
+            this.Controls.Add(this.Btn_OpenDb);
             this.Controls.Add(this.Txt_Password);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -127,11 +150,11 @@
 
         private System.Windows.Forms.TextBox Txt_Password;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_dbac;
+        private System.Windows.Forms.Button Btn_OpenDb;
         private System.Windows.Forms.ListView Lv_Drives;
         private System.Windows.Forms.ListView Lv_Folders;
         private System.Windows.Forms.ImageList ımageList1;
-
-
+        private System.Windows.Forms.TextBox Txt_FolderPath;
+        private System.Windows.Forms.Label label1;
     }
 }
